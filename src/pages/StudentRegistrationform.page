@@ -1,0 +1,36 @@
+<apex:page standardController="Student_Details__c" extensions="StudentRegistrationformcontroller" id="page">
+
+<script>
+function confirm()
+{
+alert("Your admission application has been submitted successfully");
+}
+</script>
+<apex:form id="form" >
+<apex:sectionheader title="Registration Form" subtitle="New Registration" />
+
+<apex:pageblock title="Registration Form" >
+Current system language : <apex:outputText value="{!currentLanguage}"/>
+<apex:pageblocksection title="Information">
+<apex:inputField value="{!Student_Details__c.Language_Selection__c}"/>
+<apex:inputField value="{!Student_Details__c.Student_Name__c}"/>
+<apex:inputField value="{!Student_Details__c.Course_Applying_for__c}"/>
+<apex:inputField value="{!Student_Details__c.Gender__c}"/>
+<apex:inputField value="{!Student_Details__c.Roll_No__c}"/>
+<apex:inputField value="{!Student_Details__c.SSC__c}"/>
+<apex:inputField value="{!Student_Details__c.HSC__c}"/>
+<apex:inputField value="{!Student_Details__c.City__c}"/>
+<apex:inputField value="{!Student_Details__c.State__c}"/>
+<apex:inputField value="{!Student_Details__c.Country__c}"/>
+
+</apex:pageblocksection>
+
+<apex:pageblockbuttons >
+<apex:commandbutton value="Submit" action="{!save}" onclick="return confirm()" />
+<apex:commandbutton value="Cancel" action="{!cancel}"/>
+<apex:commandButton value="lang" action="{!changeLanguage}"/>
+</apex:pageblockbuttons>
+</apex:pageblock>
+
+</apex:form>
+</apex:page>
